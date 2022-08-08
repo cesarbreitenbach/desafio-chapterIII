@@ -45,17 +45,20 @@ export function Repository() {
     <Background>
       <Container>
         <RepoInfo>
-          {/* <OwnerAvatar source={{ uri:  }} /> */}
+          <OwnerAvatar source={{ uri: repository.owner.avatar_url }} />
 
           <TextGroup>
             <TitleAnimation>
               {
                 // TODO - full name of the repository
+                repository.full_name
+
               }
             </TitleAnimation>
 
             <Description numberOfLines={2}>{
               //TODO - repository description
+              repository.description
             }</Description>
           </TextGroup>
         </RepoInfo>
@@ -64,6 +67,7 @@ export function Repository() {
           <Stars>
             <StarsCounter>{
               // TODO - repository stargazers count
+              repository.stargazers_count
             }</StarsCounter>
             <StarsText>Stars</StarsText>
           </Stars>
@@ -71,6 +75,7 @@ export function Repository() {
           <Forks>
             <ForksCounter>{
               // TODO - repository forks count
+              repository.forks_count
             }</ForksCounter>
             <ForksText>Forks</ForksText>
           </Forks>
@@ -78,6 +83,7 @@ export function Repository() {
           <OpenIssues>
             <OpenIssuesCounter>{
               // TODO - repository issues count
+              repository.issues
             }</OpenIssuesCounter>
             <OpenIssuesText>Issues{'\n'}Abertas</OpenIssuesText>
           </OpenIssues>
